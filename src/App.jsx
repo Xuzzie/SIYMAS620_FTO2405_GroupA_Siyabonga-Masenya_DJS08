@@ -1,3 +1,7 @@
+import Home from "./pages/Home.jsx/index.js";
+import About from "./pages/About.jsx/index.js";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
 /**
  * Challenge:
  * Bootstrap the VanLife project by creating the first 2 routes:
@@ -15,7 +19,22 @@
  */
 
 function App() {
-  return <h1>Hello World </h1>;
+  return (
+    <BrowserRouter>
+      <header>
+        <Link className="site-logo" to="/">
+          #VanLife
+        </Link>
+        <nav>
+          <Link to="/about">About</Link>
+        </nav>
+      </header>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
