@@ -20,7 +20,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <header>
         <Link className="site-logo" to="/">
           #VanLife
@@ -33,7 +33,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
 
