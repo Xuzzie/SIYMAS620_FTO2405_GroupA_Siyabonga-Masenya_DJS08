@@ -81,3 +81,5 @@ createServer({
     });
   },
 });
+
+console.log("MirageJS server is running!");

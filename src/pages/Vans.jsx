@@ -1,15 +1,19 @@
 import React from "react";
+import "./server.js";
+
 export default function Vans() {
   const [vans, setVans] = React.useState([]);
+
   React.useEffect(() => {
     fetch("/api/vans")
       .then((res) => res.json())
-      .then((data) => setVans(data.vans));
+      .then((data) => setVans(data.vans))
+      .catch((err) => console.error("Error fetching vans:", err));
   }, []);
 
   const vanElements = vans.map((van) => (
     <div key={van.id} className="van-tile">
-      <img src={van.imageUrl} />
+      <img src={van.imageUrl} alt={van.name} />
       <div className="van-info">
         <h3>{van.name}</h3>
         <p>
